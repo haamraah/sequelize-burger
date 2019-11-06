@@ -1,0 +1,12 @@
+<li>
+	{{dataValues.burger_name}}
+	{{#if dataValues.devoured}}
+	<button class="change-devoured btn btn-outline-danger" data-id="{{dataValues.id}}" data-newDevoured="false">
+		Yum!
+	</button>
+	{{else}}
+	<button class="delete btn btn-outline-danger" data-id="{{dataValues.id}}" >
+		X
+	</button>
+	{{/if}}
+</li>
