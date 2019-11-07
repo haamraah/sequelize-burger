@@ -1,4 +1,4 @@
-<li>
+<!-- <li>
 	{{dataValues.burger_name}}
 	{{#if dataValues.devoured}}
 	<button class="change-devoured btn btn-outline-danger" data-id="{{dataValues.id}}" data-newDevoured="false">
@@ -9,4 +9,18 @@
 		X
 	</button>
 	{{/if}}
+</li> -->
+
+<li>
+    {{this.dataValues.burger_name}}
+    {{#unless this.dataValues.devoured}}
+    <button class="yum btn btn-outline-danger" data-id="{{this.dataValues.id}}" >
+        Yum!
+
+    </button>
+    {{else}}
+    <button class="delete btn btn-outline-danger" data-id="{{this.dataValues.id}}" >
+        X
+    </button>
+    {{/unless}}
 </li>

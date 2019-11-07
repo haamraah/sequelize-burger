@@ -7,14 +7,10 @@ var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-  db.burger.findAll({
-    // attributes: ['id', 'burger_name', 'devoured']
-  }).then(function (data) {
-    var hbsObject = {
-      burgers: data
-    };
-    console.log("data is ------------------", data[0].dataValues);
-    // res.render("index", data);
+  db.burger.findAll({}).then(function (data) {
+
+    console.log("data is ------------------", );
+    res.render("index", { burgers:  data});
   });
 });
 
@@ -41,13 +37,19 @@ router.put("/api/burgers/:id", function (req, res) {
   // })
 
 
-  db.burger.findOne({
-      id: req.params.id
-    })
-    .then(_burger => {
-      _burger.dataValues.devoured = true;
-    });
-
+  // db.burger.findOne({where:
+  //     {id: req.params.id}
+  //   })
+  //   .then(_burger => {
+  //     _burger.devoured = true;
+  //   });
+    db.burger.update(
+       {devoured: true},
+       {where: {id:req.params.id}}
+     )
+     .then(function(rowsUpdated) {
+       res.json(rowsUpdated)
+     })
   // burger.update("devoured = 1",
   //   condition,
   //   function (result) {
@@ -60,13 +62,13 @@ router.put("/api/burgers/:id", function (req, res) {
   //   }
   // );
 });
-router.delete("/api/delBurgers/:id", function (req, res) {
+router.put("/api/delBurgers/:id", function (req, res) {
   // var condition = "id = " + req.params.id;
 
 
 
 
-  db.burger.destory({
+  db.burger.destroy({
       where: {
         id: req.params.id
       }
@@ -74,6 +76,7 @@ router.delete("/api/delBurgers/:id", function (req, res) {
     .then(function (rowDeleted) { // rowDeleted will return number of rows deleted
       if (rowDeleted === 1) {
         console.log('Deleted successfully');
+        res.json(rowDeleted)
       }
     }, function (err) {
       console.log(err);
