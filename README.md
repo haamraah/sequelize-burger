@@ -14,24 +14,17 @@ To use Eat-Da-Burger web application application from your local environment, yo
 
 **Step 1 - Clone my repo using the command line below.**
 ```
-git clone https://github.com/haamraah/Burger
+git clone https://github.com/haamraah/sequelize-burger
 ```
 **Step 2 - Change directory to the cloned repo folder.**
 ```
-cd Burger
+cd sequelize-burger
 ```
 **Step 3 - Install all required NPM packages.**
 ```
 npm install
 ```
-**Step 4 - Setup Database.**
-```
-mysql -u <Your MySQL Username> -p
-<Your MySQL Password>
-\. \db\schema.sql
-\. \db\seeds.sql
-\exit
-```
+
 **Step 5 - Start the application server using the command line below**
 ```
 npm start
@@ -43,7 +36,7 @@ npm start
 - body-parser NPM Package - [https://www.npmjs.com/package/body-parser](https://www.npmjs.com/package/body-parser)
 - express NPM Package - [https://www.npmjs.com/package/express](https://www.npmjs.com/package/express)
 - path NPM Package - [https://www.npmjs.com/package/path](https://www.npmjs.com/package/path)
-
+- Sequelize NPM Package -[https://www.npmjs.com/package/sequelize](https://www.npmjs.com/package/sequelize)
 <!--
 - node.js - [https://nodejs.org/en/](https://nodejs.org/en/)
 - mysql NPM Package - [https://www.npmjs.com/package/mysql](https://www.npmjs.com/package/mysql)
