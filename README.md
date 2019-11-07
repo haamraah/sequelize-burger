@@ -7,7 +7,7 @@
 The link below will give you direct access to Eat-Da-Burger web application using your web browser via the Heroku web service. (NOTE: There will be a momentary delay when first accessing the Heroku servers.)
 
 
-* [Burger]('https://peaceful-ocean-73272.herokuapp.com/')
+* [Burger]('https://infinite-stream-21236.herokuapp.com/')
 
 ## Local Environment Setup
 To use Eat-Da-Burger web application application from your local environment, you must accomplish the following steps below:
